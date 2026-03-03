@@ -5,7 +5,7 @@ self.addEventListener("install", event => {
         "/",
         "/index.html",
         "/manifest.json",
-        "/logo.png"
+        "/hyderabad coders logo.jpeg"
       ]);
     })
   );
@@ -17,4 +17,5 @@ self.addEventListener("fetch", event => {
       return response || fetch(event.request);
     })
   );
+
 });
