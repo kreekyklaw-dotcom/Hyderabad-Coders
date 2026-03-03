@@ -1,21 +1,13 @@
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open("hyd-coders-v1").then(cache => {
-      return cache.addAll([
-        "/",
-        "/index.html",
-        "/manifest.json",
-        "/hyderabad coders logo.jpeg"
-      ]);
-    })
-  );
+const CACHE_NAME = "hyderabad-coders-v1";
+
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
 });
 
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener("activate", (event) => {
+  event.waitUntil(clients.claim());
+});
 
+self.addEventListener("fetch", (event) => {
+  event.respondWith(fetch(event.request));
 });
