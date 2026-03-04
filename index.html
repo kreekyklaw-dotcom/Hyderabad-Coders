@@ -142,6 +142,34 @@ h1 {
   box-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
+.btn.rec {
+  background-color: #F5A623;   /* Golden orange */
+  color: #0B2A3C;              /* Dark navy text */
+  border: 2px solid #F5A623;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+/* Hover Effect */
+.btn.rec:hover {
+  background-color: #0B2A3C;   /* Dark navy */
+  color: #F5A623;              /* Golden text */
+  border-color: #F5A623;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(245, 166, 35, 0.4);
+}
+
+/* Active Click Effect */
+.btn.rec:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(245, 166, 35, 0.3);
+}
+
 .btn svg {
   width: 18px;
   height: 18px;
@@ -186,6 +214,11 @@ footer {
     LinkedIn
   </a>
 
+  <button class="btn rec" 
+  onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfaC9Jwz0FRloOGtUyPPbYX46oPD9Q4ebdVG9Y_lOS9TLOiqg/viewform', '_blank')">
+  Join our team
+</button>
+
   <button class="btn coming">
     🚀 More Coming Soon
   </button>
@@ -204,4 +237,5 @@ if ('serviceWorker' in navigator) {
 </script>
 
 </body>
+
 </html>
